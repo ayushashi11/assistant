@@ -128,9 +128,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#venv folders
+# venv folders
 pyvenv.cfg
 bin/
 include/
 lib/
 lib64
+
+# Extras
+.google-cookie
+.txt
+poetry.lock

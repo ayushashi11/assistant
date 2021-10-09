@@ -81,7 +81,7 @@ x.stream(code.read())
 x.sort_replies()
 inp=''
 s_print(['Hello, Human!'])
-def reply(inp): #, up, cqs):
+def reply(inp, stdscr=None):
                inp=inp.replace('don\'t','do not').replace('can\'t','cannot').replace('\'ld',' would').replace('\'ll','will').replace('dont','do not').replace('cant','cannot')
                if 'calculate' in inp.lower():
                               if inp.endswith(".."):
@@ -105,7 +105,12 @@ def reply(inp): #, up, cqs):
                                              print(e.args)
                                              return s_print(['NO CONNECTION.\nI cant check the weather without a connection'])
                elif 'search' in inp.lower() or 'google' in inp.lower():
-                              s_print(['getting the results...','click OK to continue'])
+                              if stdscr is not None:
+                                             for i in range(20):
+                                                            stdscr.move(i,0)
+                                                            stdscr.clrtoeol()
+                                             stdscr.addstr(0,0,"getting the results")
+                                             stdscr.refresh()
                               if 'search' in inp.lower():
                                              if 'for' in inp.lower():
                                                             t=inp[inp.index('r',inp.index('f'))+1:len(inp)]

@@ -33,7 +33,7 @@ print('setting up...')
 #owm=owm.weather_manager()
 sadface="😔 😟 ☹ 🥺 😢 😭 😞 😣 😖 😓 😩 😫".split()
 #speak=speech.setup_speech()
-BASE_DIR = "."
+
 system('@echo off')
 def degrees(temp):
                t=int(temp)
@@ -76,7 +76,7 @@ def search(topic):
 
 x=rs.RiveScript(True,log=".txt")
 #a=App()
-code=open(BASE_DIR+'/ai2.rive')
+code=open('assistant/ai2.rive')
 x.stream(code.read())
 x.sort_replies()
 inp=''

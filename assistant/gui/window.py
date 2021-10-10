@@ -5,7 +5,7 @@ from PySide2 import QtGui as qtg
 from PySide2 import QtWidgets as qtw
 
 from .base import Ui_main_window
-
+from typing import Callable
 
 class TitleFrame(qtw.QFrame):
     def __init__(self, window: qtw.QMainWindow) -> None:
@@ -42,6 +42,7 @@ class Window(qtw.QMainWindow):
 
         self.add_functionality()
         self.add_widget()
+        self.window.enter_button.clicked.connect(lambda: print("clicked"))
 
     def add_widget(self) -> None:
         self.window.title_h_layout.insertWidget(0, self.size_grip)
@@ -67,10 +68,11 @@ class Window(qtw.QMainWindow):
         self.is_maximum = not self.is_maximum
 
 
-def setup() -> None:
+def setup(fn: Callable[[qtw.QLineEdit, qtw.QLabel], Callable[[], None]]) -> None:
     app = qtw.QApplication(sys.argv)
 
     window = Window()
+    window.window.enter_button.clicked.connect(fn(window.window.input_box, window.window.label))
     window.show()
 
     sys.exit(app.exec_())

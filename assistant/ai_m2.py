@@ -51,16 +51,16 @@ def s_print(strings,extras=[]):
                #pop(concat(strings+extras).replace("\n","."))
 def search3(topic):
                try:
-                              return s_print(['Here are links:- '],['\n'.join(map(lambda x: "["+x+"]("+x+")", sch(topic,stop=5)))])
+                              return s_print(['###Here are links:- '],['\n'.join(map(lambda x: "- ["+x+"]("+x+")", sch(topic,stop=5)))])
                except (ConnectionError,URLError):
-                              return s_print(['Unable to Connect'])
+                              return s_print(['#Unable to Connect'])
                except RuntimeError:
                               return search(topic)
 def search2(topic):
                try:
-                              return s_print(['Here are links:- '],['\n'.join(map(lambda x: "["+x+"]("+x+")", sch(topic,stop=10)))])
+                              return s_print(['###Here are links:- '],['\n'.join(map(lambda x: "- ["+x+"]("+x+")", sch(topic,stop=10)))])
                except (ConnectionError,URLError):
-                              return s_print(['Unable to Connect'])
+                              return s_print(['#Unable to Connect'])
                except RuntimeError:
                               return search3(topic)
 def search(topic):

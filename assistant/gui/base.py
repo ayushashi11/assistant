@@ -105,9 +105,9 @@ class Ui_main_window(object):
         self.widget_v_layout.setObjectName("widget_v_layout")
         self.label = QtWidgets.QLabel(self.widget_frame)
         self.label.setStyleSheet("QLabel{\n"
-"    color: #e3e3e3;\n"
-"    font-size: 10vh;\n"
-"}")
+        "    color: #e3e3e3;\n"
+        "    font-size: 10vh;\n"
+        "}")
         self.label.setText("")
         self.label.setScaledContents(True)
         self.label.setAlignment(QtCore.Qt.AlignCenter)

@@ -65,8 +65,11 @@ def search2(topic):
                               return search3(topic)
 def search(topic):
                try:
-                              p=page(topic)
-                              return s_print([p.title]+p.content.split('.')[:2])
+                              p = page(topic)
+                              cont = p.summary
+                              if len(cont) > 1000:
+                                  cont = cont[:1000]+"..."
+                              return (s_print(["#"+p.title, cont, f"[{p.title}]({p.url})"]), p.images[0])
                except PageError:
                               return search2(topic)
                except DisambiguationError:

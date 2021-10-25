@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 
-from PySide2 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_main_window(object):
@@ -150,7 +150,7 @@ class Ui_main_window(object):
         font.setFamily("Trebuchet MS")
         font.setPointSize(20)
         font.setBold(True)
-        font.setWeight(75)
+        #font.setWeight(75)
         self.enter_button.setFont(font)
         self.enter_button.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(242, 80, 34);\n"

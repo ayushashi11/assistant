@@ -1,7 +1,7 @@
 import os
 from .gui.window import setup
 from .ai_m2 import reply
-from PySide2 import QtWidgets as qtw, QtCore as qtc
+from PySide6 import QtWidgets as qtw, QtCore as qtc
 from markdown import markdown as md
 
 def setup_reply_function(input_box: qtw.QLineEdit, label: qtw.QLabel):

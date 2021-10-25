@@ -1,8 +1,8 @@
 import sys
 
-from PySide2 import QtCore as qtc
-from PySide2 import QtGui as qtg
-from PySide2 import QtWidgets as qtw
+from PySide6 import QtCore as qtc
+from PySide6 import QtGui as qtg
+from PySide6 import QtWidgets as qtw
 
 from .base import Ui_main_window
 from typing import Callable

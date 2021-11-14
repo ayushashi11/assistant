@@ -68,7 +68,7 @@ class Window(qtw.QMainWindow):
         self.is_maximum = not self.is_maximum
 
 
-def setup(fn: Callable[[qtw.QLineEdit, qtw.QLabel], Callable[[], None]]) -> None:
+def run(fn: Callable[[qtw.QLineEdit, qtw.QLabel], Callable[[], None]]) -> None:
     app = qtw.QApplication(sys.argv)
 
     window = Window()
